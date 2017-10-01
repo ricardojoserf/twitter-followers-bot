@@ -11,7 +11,7 @@ sudo pip install regex tweepy argparse
 
 ## Usage
 
-**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o {option}* *
+**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o {option}**
 
 *-q: Query, the word to search (Optional)*
 
