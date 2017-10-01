@@ -1,6 +1,7 @@
 # twitter-bot
 Twitter bot for following/unfollowing people automatically and get more followers!
 
+- - - - - - - - - - -
 
 ## Requirements
 #### 1 - Pip modules
@@ -30,3 +31,5 @@ Twitter bot for following/unfollowing people automatically and get more follower
 
 ## Example
 **python twitter-bot.py -q "le pen" -l 100 -g "40.432,-3.708,10km"**
+
+- - - - - - - - - - -
