@@ -1,5 +1,5 @@
 # twitter-bot
-Twitter bot fo rfollowing/unfollowing people automatically and get more followers!
+Twitter bot for following/unfollowing people automatically and get more followers!
 
 
 ## Requirements
@@ -19,12 +19,13 @@ sudo pip install regex tweepy argparse
 
 *-l: Limit, max number of tweets (Optional)*
 
-*-o: Option*
+*-o: Option,* "follow" *or* "unfollow"
 
 
-*python twitter-bot.py -q {query} -g {geocode} -l {limit} -o follow*: Follow users tweeting the query value in the geocode location, limited to the limit value
+**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o follow**: Follow users tweeting the query value in the geocode location, limited to the limit value
 
-*python twitter-bot.py -q {query} -g {geocode} -l {limit} -o unfollow*: Follow users who do not follow you back and are not included in the whitelist.txt file
+**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o unfollow**: Follow users who do not follow you back and are not included in the whitelist.txt file
+
 
 
 
