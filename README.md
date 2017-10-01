@@ -7,7 +7,7 @@ Twitter bot for following/unfollowing people automatically and get more follower
 *sudo pip install tweepy argparse*
 #### 2 - Create a twitter account and a twitter app, and fill the config.py file
 
--
+- - - - - - - - - - -
 
 ## Usage
 
@@ -26,7 +26,7 @@ Twitter bot for following/unfollowing people automatically and get more follower
 
 **python twitter-bot.py -q {query} -g {geocode} -l {limit} -o unfollow**: Follow users who do not follow you back and are not included in the whitelist.txt file
 
--
+- - - - - - - - - - -
 
 ## Example
 **python twitter-bot.py -q "le pen" -l 100 -g "40.432,-3.708,10km"**
