@@ -25,11 +25,10 @@ Twitter bot for following/unfollowing people automatically and get more follower
 
 **python twitter-bot.py -q {query} -g {geocode} -l {limit} -o follow**: Follow users tweeting the query value in the geocode location, limited to the limit value
 
-**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o unfollow**: Follow users who do not follow you back and are not included in the whitelist.txt file
+**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o unfollow**: UNfollow users who do not follow you back and are not included in the whitelist.txt file
 
 - - - - - - - - - - -
 
 ## Example
 **python twitter-bot.py -q "le pen" -l 100 -g "40.432,-3.708,10km" -o follow**
 
-- - - - - - - - - - -
