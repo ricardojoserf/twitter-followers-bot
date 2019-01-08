@@ -22,7 +22,7 @@ A bot for Twitter. You can follow users in a specific location or tweeting speci
 
 **python twitter-bot.py -q {query} -g {geocode} -l {limit} -o follow**: Follow users tweeting the query value in the geocode location, limited to the limit value
 
-**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o unfollow**: UNfollow users who do not follow you back and are not included in the whitelist.txt file
+**python twitter-bot.py -o unfollow**: UNfollow users who do not follow you back and are not included in the whitelist.txt file
 
 
 ## Example
