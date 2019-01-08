@@ -1,5 +1,5 @@
 # twitter-bot
-Twitter bot for following/unfollowing people automatically and get more followers!
+A bot for Twitter. You can follow users in a specific location or tweeting specific words and unfollow those who dont follow-you-back (and are not included in  whitelist.txt)
 
 ## Requirements
 
