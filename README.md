@@ -1,29 +1,63 @@
 # twitter-bot
 A bot for Twitter. You can follow users in a specific location or tweeting specific words and unfollow those who dont follow-you-back (and are not included in  whitelist.txt)
 
-## Requirements
-
-*sudo pip install -r requirements.txt*
-
-*Create a twitter account and a twitter app, and fill the config.py file*
-
 
 ## Usage
 
-**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o {option}**
+*Follow people who tweeted a word (**query**), limited to the **limit** value:*
+```
+python twitter-bot.py -q {query} -l {limit} -o follow**
+```
 
-- *-q: Query, the word to search (Optional)*
+*Follow people who tweeted in a location (**geocode**), limited to the **limit** value:*
+```
+python twitter-bot.py -g {geocode} -l {limit} -o follow**
+```
 
-- *-g: Geocode location, formatted as* LAT,LON,N*km (Optional)*
-
-- *-l: Limit, max number of tweets (Optional)*
-
-- *-o: Option,* "follow" *or* "unfollow"
-
-**python twitter-bot.py -q {query} -g {geocode} -l {limit} -o follow**: Follow users tweeting the query value in the geocode location, limited to the limit value
-
-**python twitter-bot.py -o unfollow**: UNfollow users who do not follow you back and are not included in the whitelist.txt file
+Unfollow people who do not follow you back:
+```
+python twitter-bot.py -o unfollow**
+```
 
 
 ## Example
-**python twitter-bot.py -q "le pen" -l 100 -g "40.432,-3.708,10km" -o follow**
+
+*Follow 5 people who tweeted 'oscp':*
+```
+python twitter-bot.py -q "oscp" -l 5 -o follow
+```
+![Screenshot](images/img1.png)
+
+*Follow 7 people tweeting in 40.432,-3.708:*
+```
+python3 twitter-bot.py -g "40.432,-3.708,10km" -l 7 -o follow
+```
+![Screenshot](images/img2.png)
+
+*Unfollow people who i follow butt they do not follow me back:*
+```
+python3 twitter-bot.py -o unfollow
+```
+![Screenshot](images/img3.png)
+
+
+## Requirements
+
+Python 2.x:
+
+```
+sudo pip install -r requirements.txt
+```
+
+Python 3.x:
+
+```
+sudo pip3 install -r requirements.txt
+```
+
+*Create a twitter account and a twitter app, and fill the **config.py** file*
+
+## Note
+
+Tested both in Python2.x (2.7.15rc1) and Python 3.x (3.6.7)
+

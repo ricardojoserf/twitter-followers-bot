@@ -26,11 +26,11 @@ def follow_funct(query, geocode, limit, api):
     if query is not None and geocode is not None:
         cursor = tweepy.Cursor(api.search, q=query, geocode=geocode, count=int(limit)).items(int(limit))
     # Start following people
-    print "Following %s people: " % limit
+    print ("Following %s people: " % limit)
     for tweet in cursor:
         screen_name = tweet.user.screen_name
         api.create_friendship(screen_name)
-        print " - " + screen_name
+        print (" - " + screen_name)
 
 
 def unfollow_funct(api):
@@ -42,8 +42,46 @@ def unfollow_funct(api):
     for i in followings:
         screen_name = api.get_user(i).screen_name
         if i not in followers and screen_name not in whitelist:
-            print "Unfollowing %s" % screen_name
+            print ("Unfollowing %s" % screen_name)
             api.destroy_friendship(screen_name)
+
+def report(api):
+    followers = api.followers_ids()
+    followings = api.friends_ids()
+    followers_names=[]
+    followings_names=[]
+    for i in followers:
+        screen_name = api.get_user(i).screen_name
+        followers_names.append(screen_name)
+    for j in followings:
+        screen_name = api.get_user(j).screen_name
+        followings.append(screen_name)
+    didnt_follow_me = list(set(followings_names)-set(followers_names))
+    didnt_follow_them = list(set(followers_names)-set(followings_names))
+    counter = 0
+    print ("Followers...")
+    for k in followers_names:
+    	counter+=1
+    	print (str(counter)+") "+k)
+
+    counter=0
+    print ("Followings...")
+    for k in followings_names:
+    	counter+=1
+    	print (str(counter)+") "+k)
+
+    print ("I follow them but they do not follow me back...")
+    for k in didnt_follow_me:
+    	counter+=1
+    	print (str(counter)+") "+k)
+
+    counter=0
+    print ("They follow me but i do not follow them...")
+    for k in didnt_follow_them:
+    	counter+=1
+    	print (str(counter)+") "+k)
+
+
 
 
 def main():
@@ -54,7 +92,7 @@ def main():
         access_token=config.access_token
         access_token_secret=config.access_token_secret
     else:
-        print "Fill the config file please!"
+        print ("Fill the config file please!")
         return
     # Auth process
     try:
@@ -70,12 +108,14 @@ def main():
         limit = args.limit
         if limit is None:
             limit = def_limit
-            print "Default number of tweets: %s" % limit
+            print ("Default number of tweets: %s" % limit)
         follow_funct(args.query, args.geocode, limit, api)
     elif option == "unfollow":
         unfollow_funct(api)
+    elif option == "info":
+    	report(api)
     else:
-        print "Unknown function"
+        print ("Unknown function")
 
 
 if __name__ == "__main__":
