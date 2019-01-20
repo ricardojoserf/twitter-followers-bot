@@ -1,22 +1,22 @@
 # twitter-bot
-A bot for Twitter. You can follow users in a specific location or tweeting specific words and unfollow those who dont follow-you-back (and are not included in  whitelist.txt)
+A bot for Twitter. You can follow users in a specific location or tweeting specific words and unfollow those who dont follow you back (and are not included in  whitelist.txt)
 
 
 ## Usage
 
 Follow people who tweeted a word (**query**), limited to the **limit** value:
 ```
-python twitter-bot.py -q {query} -l {limit} -o follow**
+python twitter-bot.py -q {query} -l {limit} -o follow
 ```
 
 Follow people who tweeted in a location (**geocode**), limited to the **limit** value:
 ```
-python twitter-bot.py -g {geocode} -l {limit} -o follow**
+python twitter-bot.py -g {geocode} -l {limit} -o follow
 ```
 
 Unfollow people who do not follow you back:
 ```
-python twitter-bot.py -o unfollow**
+python twitter-bot.py -o unfollow
 ```
 
 
