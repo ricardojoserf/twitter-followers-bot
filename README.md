@@ -19,7 +19,7 @@ Follow users from a list file
 python twitter-bot.py -o follow -i test.lst
 ```
 
-Unfollow people who do not follow you back:
+Unfollow people who do not follow you back and are not included in *whitelist.txt*:
 ```
 python twitter-bot.py -o unfollow
 ```
@@ -62,7 +62,7 @@ python3 twitter-bot.py -o unfollow
 ```
 python3 twitter-bot.py -o info
 ```
-<img src="images/img4.png" height="150">
+<img src="images/img4.png" height="160">
 
 (...)
 
@@ -70,7 +70,7 @@ python3 twitter-bot.py -o info
 
 (...)
 
-<img src="images/img6.png" height="150">
+<img src="images/img6.png" height="140">
 
 
 ## Requirements
