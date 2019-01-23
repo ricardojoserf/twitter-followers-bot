@@ -15,6 +15,7 @@ def get_args():
     parser.add_argument('-l', '--limit', required=False, action='store', help='Max. number of tweets')
     parser.add_argument('-g', '--geocode', required=False, action='store', help='Geocode. Ex: "40.432,-3.708,10km"')
     parser.add_argument('-o', '--option', required=True, action='store', help='Option')
+    parser.add_argument('-i', '--input', required=True, action='store', help='Input list')
     my_args = parser.parse_args()
     return my_args
 
@@ -46,6 +47,14 @@ def unfollow_funct(api):
         if i not in followers and screen_name not in whitelist:
             print ("Unfollowing %s" % screen_name)
             api.destroy_friendship(screen_name)
+
+
+def follow_list(api, userlist):
+    userlist = open(userlist).read().splitlines()
+    for screen_name in userlist:
+        if screen_name is not '':
+            print ("Following %s"%(screen_name))
+            api.create_friendship(screen_name)
 
 
 def ratelimit():
@@ -138,11 +147,20 @@ def main():
     args = get_args()
     option = args.option
     if option == "follow":
-        limit = args.limit
-        if limit is None:
-            limit = def_limit
-            print ("Default number of tweets: %s" % limit)
-        follow_funct(args.query, args.geocode, limit, api)
+        query = args.query
+        geocode = args.geocode
+        input_ = args.input
+
+        if query is not None or geocode is not None:
+            limit = args.limit
+            if limit is None:
+                limit = def_limit
+                print ("Default number of tweets: %s" % limit)
+            follow_funct(args.query, args.geocode, limit, api)
+        
+        elif input_ is not None:    
+            follow_list(api, input_)
+                
     elif option == "unfollow":
         unfollow_funct(api)
     elif option == "info":

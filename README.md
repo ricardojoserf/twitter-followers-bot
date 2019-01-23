@@ -1,5 +1,5 @@
 # twitter-bot
-A bot for Twitter. You can follow users in a specific location or tweeting specific words and unfollow those who dont follow you back (and are not included in  *whitelist.txt*). **OPTIONS**: follow , unfollow and create reports (containing followers, followings, people who do not follow me back and people i do not follow back). 
+A bot for Twitter.**OPTIONS**: Follow users from query, geocode or list; unfollow who do not follow back (and are not included in *whitelist.txt*); create reports (containing followers, followings, people who do not follow me back and people i do not follow back). 
 
 
 ## Usage
@@ -14,9 +14,19 @@ Follow people who tweeted in a location (**geocode**), limited to the **limit** 
 python twitter-bot.py -g {geocode} -l {limit} -o follow
 ```
 
+Follow users from a list file
+```
+python twitter-bot.py -o follow -i test.lst
+```
+
 Unfollow people who do not follow you back:
 ```
 python twitter-bot.py -o unfollow
+```
+
+Show report (followers, followings, people who do not follow me back and people i do not follow back)
+```
+python twitter-bot.py -o info
 ```
 
 
@@ -36,6 +46,12 @@ python3 twitter-bot.py -g "40.432,-3.708,10km" -l 7 -o follow
 ```
 ![Screenshot](images/img2.png)
 
+Follow users in example.lst:
+```
+python3 twitter-bot.py -o follow -i example.lst
+```
+![Screenshot](images/img7.png)
+
 Unfollow people who i follow butt they do not follow me back:
 
 ```
@@ -46,7 +62,7 @@ python3 twitter-bot.py -o unfollow
 ```
 python3 twitter-bot.py -o info
 ```
-<img src="images/img4.png" height="200">
+<img src="images/img4.png" height="100">
 
 (...)
 
@@ -54,7 +70,7 @@ python3 twitter-bot.py -o info
 
 (...)
 
-<img src="images/img6.png" height="200">
+<img src="images/img6.png" height="100">
 
 
 ## Requirements
