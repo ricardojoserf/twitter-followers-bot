@@ -1,5 +1,5 @@
 # twitter-bot
-A bot for Twitter.**OPTIONS**: Follow users from query, geocode or list; unfollow who do not follow back (and are not included in *whitelist.txt*); create reports (containing followers, followings, people who do not follow me back and people i do not follow back). 
+A bot for Twitter. **OPTIONS**: Follow users from query, geocode or list; unfollow who do not follow back (and are not included in *whitelist.txt*); create reports (containing followers, followings, people who do not follow me back and people i do not follow back). 
 
 
 ## Usage
@@ -62,7 +62,7 @@ python3 twitter-bot.py -o unfollow
 ```
 python3 twitter-bot.py -o info
 ```
-<img src="images/img4.png" height="100">
+<img src="images/img4.png" height="150">
 
 (...)
 
@@ -70,7 +70,7 @@ python3 twitter-bot.py -o info
 
 (...)
 
-<img src="images/img6.png" height="100">
+<img src="images/img6.png" height="150">
 
 
 ## Requirements
