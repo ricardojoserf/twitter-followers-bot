@@ -46,11 +46,15 @@ python3 twitter-bot.py -o unfollow
 ```
 python3 twitter-bot.py -o info
 ```
-![Screenshot](images/img4.png)
+![Screenshot](images/img4.png | width=100)
 
-![Screenshot](images/img5.png)
+(...)
 
-![Screenshot](images/img6.png)
+![Screenshot](images/img5.png | width=100)
+
+(...)
+
+![Screenshot](images/img6.png | width=100)
 
 
 ## Requirements
