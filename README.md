@@ -50,7 +50,7 @@ Follow users in example.lst:
 ```
 python3 twitter-bot.py -o follow -i example.lst
 ```
-![Screenshot](images/img7.png)
+<img src="images/img7.png" height="120">
 
 Unfollow people who i follow butt they do not follow me back:
 
