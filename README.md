@@ -23,39 +23,49 @@ python twitter-bot.py -o unfollow
 ## Example
 
 Follow 5 people who tweeted 'oscp':
+
 ```
 python twitter-bot.py -q "oscp" -l 5 -o follow
 ```
 ![Screenshot](images/img1.png)
 
 Follow 7 people tweeting in 40.432,-3.708:
+
 ```
 python3 twitter-bot.py -g "40.432,-3.708,10km" -l 7 -o follow
 ```
 ![Screenshot](images/img2.png)
 
 Unfollow people who i follow butt they do not follow me back:
+
 ```
 python3 twitter-bot.py -o unfollow
 ```
 ![Screenshot](images/img3.png)
 
+```
+python3 twitter-bot.py -o info
+```
+![Screenshot](images/img4.png)
+
+![Screenshot](images/img5.png)
+
+![Screenshot](images/img6.png)
+
 
 ## Requirements
 
 Python 2.x:
-
 ```
 sudo pip install -r requirements.txt
 ```
 
 Python 3.x:
-
 ```
 sudo pip3 install -r requirements.txt
 ```
 
-*Create a twitter account and a twitter app, and fill the **config.py** file*
+*Create a twitter account and a twitter app, and fill the **config.py** file with the data you can create in https://developer.twitter.com*
 
 ## Note
 

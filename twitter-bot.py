@@ -2,9 +2,11 @@ import tweepy
 from tweepy import OAuthHandler
 import config as config
 import argparse
+import time, datetime
 
 # Default limit of tweets
 def_limit = 5
+delay_ = 1
 
 
 def get_args():
@@ -45,43 +47,74 @@ def unfollow_funct(api):
             print ("Unfollowing %s" % screen_name)
             api.destroy_friendship(screen_name)
 
+
+def ratelimit():
+	print ("Rate limit. Waiting for 2 minutes nad trying again.")
+	print ("If it fails again, try to regenerate Twitter Keys and Tokens")
+	time.sleep(120)
+	return
+
+
 def report(api):
-    followers = api.followers_ids()
-    followings = api.friends_ids()
-    followers_names=[]
-    followings_names=[]
-    for i in followers:
-        screen_name = api.get_user(i).screen_name
-        followers_names.append(screen_name)
-    for j in followings:
-        screen_name = api.get_user(j).screen_name
-        followings.append(screen_name)
-    didnt_follow_me = list(set(followings_names)-set(followers_names))
-    didnt_follow_them = list(set(followers_names)-set(followings_names))
-    counter = 0
-    print ("Followers...")
-    for k in followers_names:
-    	counter+=1
-    	print (str(counter)+") "+k)
+	followers = api.followers_ids()
+	followings = api.friends_ids()
+	followers_names=[]
+	followings_names=[]
 
-    counter=0
-    print ("Followings...")
-    for k in followings_names:
-    	counter+=1
-    	print (str(counter)+") "+k)
+	# People following me
+	print ("\nFOLLOWERS\n")
+	counter = 0
+	for i in followers:
+		try:
+			time.sleep(delay_)
+			screen_name = api.get_user(i).screen_name
+			followers_names.append(screen_name)
+			counter+=1
+			print (str(counter)+") "+screen_name)
+		except:
+			ratelimit()
 
-    print ("I follow them but they do not follow me back...")
-    for k in didnt_follow_me:
-    	counter+=1
-    	print (str(counter)+") "+k)
+	# People i follow
+	print ("\nFOLLOWING\n")
+	counter = 0
+	for j in followings:
+		try:
+			time.sleep(delay_)
+			screen_name = api.get_user(j).screen_name
+			followings_names.append(screen_name)
+			counter+=1
+			print (str(counter)+") "+screen_name)
+		except:
+			ratelimit()
+			screen_name = api.get_user(j).screen_name
+			followings_names.append(screen_name)
+			counter+=1
+			print (str(counter)+") "+screen_name)
 
-    counter=0
-    print ("They follow me but i do not follow them...")
-    for k in didnt_follow_them:
-    	counter+=1
-    	print (str(counter)+") "+k)
+	# People who i follow but they do not follow me
+	didnt_follow_me = list(set(followings_names)-set(followers_names))
+	# People who follow me but i do not follow them
+	didnt_follow_them = list(set(followers_names)-set(followings_names))
+	
+	counter = 0
+	print ("\nI FOLLOW BUT THEY DO NOT FOLLOW BACK\n")
+	for k in didnt_follow_me:
+		counter+=1
+		print (str(counter)+") "+k)
 
+	counter=0
+	print ("\nTHEY FOLLOW BUT I DO NOT FOLLOW BACK\n")
+	for l in didnt_follow_them:
+		counter+=1
+		print (str(counter)+") "+l)
 
+	print ("\n------------------------- SUMMARY -------------------------")
+	print ("Total followers: %s"%(len(followers_names)))
+	print ("Total following: %s"%(len(followings_names)))
+	print ("Total people i follow but they do not follow me: %s"%(len(didnt_follow_me)))
+	print ("Total people following me but i do not follow them: %s"%(len(didnt_follow_them)))
+	print ("\nDate: %s"%(datetime.datetime.now()))
+	print ("-----------------------------------------------------------")
 
 
 def main():
