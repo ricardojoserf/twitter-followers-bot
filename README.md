@@ -1,5 +1,5 @@
 # twitter-bot
-A bot for Twitter. You can follow users in a specific location or tweeting specific words and unfollow those who dont follow you back (and are not included in  whitelist.txt)
+A bot for Twitter. You can follow users in a specific location or tweeting specific words and unfollow those who dont follow you back (and are not included in  *whitelist.txt*). **OPTIONS**: follow , unfollow and create reports (containing followers, followings, people who do not follow me back and people i do not follow back). 
 
 
 ## Usage
