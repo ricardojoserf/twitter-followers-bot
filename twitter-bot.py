@@ -15,7 +15,7 @@ def get_args():
     parser.add_argument('-l', '--limit', required=False, action='store', help='Max. number of tweets')
     parser.add_argument('-g', '--geocode', required=False, action='store', help='Geocode. Ex: "40.432,-3.708,10km"')
     parser.add_argument('-o', '--option', required=True, action='store', help='Option')
-    parser.add_argument('-i', '--input', required=True, action='store', help='Input list')
+    parser.add_argument('-i', '--input', required=False, action='store', help='Input list')
     my_args = parser.parse_args()
     return my_args
 
@@ -171,8 +171,8 @@ def main():
     elif option == "unfollow-back":
         unfollow_funct(api)
     elif option == "unfollow":
-	input_ = args.input
-	unfollow_list(api, input_)
+        input_ = args.input
+        unfollow_list(api, input_)
     elif option == "info":
     	report(api)
     else:

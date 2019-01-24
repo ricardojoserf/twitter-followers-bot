@@ -14,12 +14,12 @@ Follow people who tweeted in a location (**geocode**), limited to the **limit** 
 python twitter-bot.py -g {geocode} -l {limit} -o follow
 ```
 
-Follow users from a list file
+Follow users from a list file:
 ```
 python twitter-bot.py -o follow -i test.lst
 ```
 
-Unfollow users from a list file
+Unfollow users from a list file:
 ```
 python twitter-bot.py -o unfollow -i test.lst
 ```
@@ -29,7 +29,7 @@ Unfollow all the people who do not follow you back and are not included in *whit
 python twitter-bot.py -o unfollow-back
 ```
 
-Show report (followers, followings, people who do not follow me back and people i do not follow back)
+Show report (followers, followings, people who do not follow me back and people i do not follow back):
 ```
 python twitter-bot.py -o info
 ```
@@ -42,41 +42,52 @@ Follow 5 people who tweeted 'oscp':
 ```
 python twitter-bot.py -q "oscp" -l 5 -o follow
 ```
-![Screenshot](images/img1.png)
+![Screenshot](images/im1.png)
 
 Follow 7 people tweeting in 40.432,-3.708:
 
 ```
 python3 twitter-bot.py -g "40.432,-3.708,10km" -l 7 -o follow
 ```
-![Screenshot](images/img2.png)
+![Screenshot](images/im2.png)
 
 Follow users in example.lst:
 ```
 python3 twitter-bot.py -o follow -i example.lst
 ```
-![Screenshot](images/img7.png)
+![Screenshot](images/im3.png)
 
 Unfollow people who i follow but they do not follow me back:
 
 ```
 python3 twitter-bot.py -o unfollow-back
 ```
-![Screenshot](images/img3.png)
+![Screenshot](images/im4.png)
 
 ```
 python3 twitter-bot.py -o info
 ```
-<img src="images/img4.png" height="160">
+![Screenshot](images/im5.png)
 
 (...)
 
-<img src="images/img5.png" height="200">
+![Screenshot](images/im6.png)
 
 (...)
 
-<img src="images/img6.png" height="140">
+![Screenshot](images/im7.png)
 
+(...)
+
+![Screenshot](images/im8.png)
+
+(...)
+
+![Screenshot](images/im9.png)
+
+(...)
+
+![Screenshot](images/im10.png)
 
 ## Requirements
 
