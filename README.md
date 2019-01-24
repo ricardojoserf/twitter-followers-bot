@@ -37,7 +37,7 @@ python twitter-bot.py -o info
 
 ## Examples
 
-Follow 5 people who tweeted 'oscp':
+Follow 5 people tweeting 'oscp':
 
 ```
 python twitter-bot.py -q "oscp" -l 5 -o follow
@@ -57,21 +57,24 @@ python3 twitter-bot.py -o follow -i example.lst
 ```
 ![Screenshot](images/im3.png)
 
+Unfollow users in example.lst:
+
+![Screenshot](images/im4.png)
+
 Unfollow people who i follow but they do not follow me back:
 
 ```
 python3 twitter-bot.py -o unfollow-back
 ```
-![Screenshot](images/im4.png)
+![Screenshot](images/im5.png)
 
 ```
 python3 twitter-bot.py -o info
 ```
-![Screenshot](images/im5.png)
-
-
-
 ![Screenshot](images/im6.png)
+
+
+![Screenshot](images/im7.png)
 
 
 ## Requirements
