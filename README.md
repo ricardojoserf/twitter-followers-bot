@@ -6,22 +6,22 @@ A bot for Twitter. **OPTIONS**: Follow users from query, geocode or list; unfoll
 
 Follow people who tweeted a word (**query**), limited to the **limit** value:
 ```
-python twitter-bot.py -q {query} -l {limit} -o follow
+python twitter-bot.py -o follow -q {query} -l {limit}
 ```
 
 Follow people who tweeted in a location (**geocode**), limited to the **limit** value:
 ```
-python twitter-bot.py -g {geocode} -l {limit} -o follow
+python twitter-bot.py -o follow -g {geocode} -l {limit}
 ```
 
 Follow users from a list file:
 ```
-python twitter-bot.py -o follow -i test.lst
+python twitter-bot.py -o follow -i {list_file}
 ```
 
 Unfollow users from a list file:
 ```
-python twitter-bot.py -o unfollow -i test.lst
+python twitter-bot.py -o unfollow -i {list_file}
 ```
 
 Unfollow all the people who do not follow you back and are not included in *whitelist.txt*:
@@ -35,7 +35,7 @@ python twitter-bot.py -o info
 ```
 
 
-## Example
+## Examples
 
 Follow 5 people who tweeted 'oscp':
 
@@ -69,25 +69,10 @@ python3 twitter-bot.py -o info
 ```
 ![Screenshot](images/im5.png)
 
-(...)
+
 
 ![Screenshot](images/im6.png)
 
-(...)
-
-![Screenshot](images/im7.png)
-
-(...)
-
-![Screenshot](images/im8.png)
-
-(...)
-
-![Screenshot](images/im9.png)
-
-(...)
-
-![Screenshot](images/im10.png)
 
 ## Requirements
 
