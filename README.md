@@ -19,9 +19,14 @@ Follow users from a list file
 python twitter-bot.py -o follow -i test.lst
 ```
 
-Unfollow people who do not follow you back and are not included in *whitelist.txt*:
+Unfollow users from a list file
 ```
-python twitter-bot.py -o unfollow
+python twitter-bot.py -o unfollow -i test.lst
+```
+
+Unfollow all the people who do not follow you back and are not included in *whitelist.txt*:
+```
+python twitter-bot.py -o unfollow-back
 ```
 
 Show report (followers, followings, people who do not follow me back and people i do not follow back)
@@ -52,10 +57,10 @@ python3 twitter-bot.py -o follow -i example.lst
 ```
 ![Screenshot](images/img7.png)
 
-Unfollow people who i follow butt they do not follow me back:
+Unfollow people who i follow but they do not follow me back:
 
 ```
-python3 twitter-bot.py -o unfollow
+python3 twitter-bot.py -o unfollow-back
 ```
 ![Screenshot](images/img3.png)
 
