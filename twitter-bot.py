@@ -55,6 +55,13 @@ def follow_list(api, userlist):
         if screen_name is not '':
             print ("Following %s"%(screen_name))
             api.create_friendship(screen_name)
+		
+def unfollow_list(api, userlist):
+    userlist = open(userlist).read().splitlines()
+    for screen_name in userlist:
+        if screen_name is not '':
+            print ("Unfollowing %s"%(screen_name))
+            api.destroy_friendship(screen_name)
 
 
 def ratelimit():
@@ -161,8 +168,11 @@ def main():
         elif input_ is not None:    
             follow_list(api, input_)
                 
-    elif option == "unfollow":
+    elif option == "unfollow-back":
         unfollow_funct(api)
+    elif option == "unfollow":
+	input_ = args.input
+	unfollow_list(api, input_)
     elif option == "info":
     	report(api)
     else:
