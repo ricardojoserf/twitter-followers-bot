@@ -7,7 +7,7 @@ import time, datetime
 # Default limit of tweets
 def_limit = 5
 delay_ = 1
-
+delay_follow = 1
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -34,6 +34,16 @@ def follow_funct(query, geocode, limit, api):
         screen_name = tweet.user.screen_name
         api.create_friendship(screen_name)
         print (" - " + screen_name)
+        time.sleep(delay_follow)
+
+
+def follow_list(api, userlist):
+    userlist = open(userlist).read().splitlines()
+    for screen_name in userlist:
+        if screen_name is not '':
+            print ("Following %s"%(screen_name))
+            api.create_friendship(screen_name)
+            time.sleep(delay_follow)
 
 
 def unfollow_funct(api):
@@ -48,13 +58,6 @@ def unfollow_funct(api):
             print ("Unfollowing %s" % screen_name)
             api.destroy_friendship(screen_name)
 
-
-def follow_list(api, userlist):
-    userlist = open(userlist).read().splitlines()
-    for screen_name in userlist:
-        if screen_name is not '':
-            print ("Following %s"%(screen_name))
-            api.create_friendship(screen_name)
 		
 def unfollow_list(api, userlist):
     userlist = open(userlist).read().splitlines()
