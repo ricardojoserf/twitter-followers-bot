@@ -42,51 +42,51 @@ Follow 5 people tweeting 'oscp':
 ```
 python twitter-bot.py -q "oscp" -l 5 -o follow
 ```
-![Screenshot](images/im1.png)
+![Screenshot](https://i.imgur.com/KZCVq6D.png)
 
 Follow 7 people tweeting in 40.432,-3.708:
 
 ```
 python3 twitter-bot.py -g "40.432,-3.708,10km" -l 7 -o follow
 ```
-![Screenshot](images/im2.png)
+![Screenshot](https://i.imgur.com/3ZCQ1kk.png)
 
 Follow users in example.lst:
 ```
 python3 twitter-bot.py -o follow -i example.lst
 ```
-![Screenshot](images/im3.png)
+![Screenshot](https://i.imgur.com/Y5GndGI.png)
 
 Unfollow users in example.lst:
 
-![Screenshot](images/im4.png)
+![Screenshot](https://i.imgur.com/0qDpQYG.png)
 
 Unfollow people who i follow but they do not follow me back:
 
 ```
 python3 twitter-bot.py -o unfollow-back
 ```
-![Screenshot](images/im5.png)
+![Screenshot](https://i.imgur.com/QBhrXoe.png)
 
 ```
 python3 twitter-bot.py -o info
 ```
-![Screenshot](images/im6.png)
+![Screenshot](https://i.imgur.com/0quGImh.png)
 
 
-![Screenshot](images/im7.png)
+![Screenshot](https://i.imgur.com/KfIXHO4.png)
 
 
 ## Requirements
 
 Python 2.x:
 ```
-sudo pip install -r requirements.txt
+pip install tweepy
 ```
 
 Python 3.x:
 ```
-sudo pip3 install -r requirements.txt
+pip3 install tweepy
 ```
 
 *Create a twitter account and a twitter app, and fill the **config.py** file with the data you can create in https://developer.twitter.com*
@@ -94,4 +94,3 @@ sudo pip3 install -r requirements.txt
 ## Note
 
 Tested both in Python2.x (2.7.15rc1) and Python 3.x (3.6.7)
-
