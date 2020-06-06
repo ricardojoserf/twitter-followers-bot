@@ -40,7 +40,7 @@ def follow_funct(query, geocode, limit, api):
 def follow_list(api, userlist):
     userlist = open(userlist).read().splitlines()
     for screen_name in userlist:
-        if screen_name is not '':
+        if screen_name != '':
             print ("Following %s"%(screen_name))
             api.create_friendship(screen_name)
             time.sleep(delay_follow)
@@ -62,7 +62,7 @@ def unfollow_funct(api):
 def unfollow_list(api, userlist):
     userlist = open(userlist).read().splitlines()
     for screen_name in userlist:
-        if screen_name is not '':
+        if screen_name != '':
             print ("Unfollowing %s"%(screen_name))
             api.destroy_friendship(screen_name)
 
