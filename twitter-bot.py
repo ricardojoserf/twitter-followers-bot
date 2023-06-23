@@ -139,11 +139,11 @@ def report(api):
 def main():
     # Check config file is ok
     if config.consumer_key != "" or config.consumer_secret != "" or config.access_token != "" or config.access_token_secret != "":
-	bearer_token=config.bearer_token
-	consumer_key=config.consumer_key
-	consumer_secret=config.consumer_secret
-	access_token=config.access_token
-	access_token_secret=config.access_token_secret
+    	bearer_token=config.bearer_token
+    	consumer_key=config.consumer_key
+    	consumer_secret=config.consumer_secret
+    	access_token=config.access_token
+    	access_token_secret=config.access_token_secret
     else:
     	print ("Fill the config file please!")
     	return
