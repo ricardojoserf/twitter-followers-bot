@@ -151,7 +151,7 @@ def main():
     try:
         #auth = OAuthHandler(consumer_key, consumer_secret)
         #auth.set_access_token(access_token, access_token_secret)
-        api = tweepy.Client(bearer_token=bearer_tokenconsumer_key=consumer_key, consumer_secret=consumer_secret,access_token=access_token,access_token_secret=access_token_secret)
+        api = tweepy.Client(bearer_token=bearer_token,consumer_key=consumer_key, consumer_secret=consumer_secret,access_token=access_token,access_token_secret=access_token_secret)
     except ValueError:
         print("Error authenticating!")
     # Different options
