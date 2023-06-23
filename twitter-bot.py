@@ -145,8 +145,8 @@ def main():
 	access_token=config.access_token
 	access_token_secret=config.access_token_secret
     else:
-	print ("Fill the config file please!")
-	return
+    	print ("Fill the config file please!")
+    	return
     # Auth process
     try:
         #auth = OAuthHandler(consumer_key, consumer_secret)
