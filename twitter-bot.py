@@ -75,15 +75,15 @@ def ratelimit():
 
 
 def report(api):
-	followers = api.followers_ids()
-	followings = api.friends_ids()
+	followers = tweepy.Cursor(api.followers_ids,user_id='twitter_user_id')
+    followings = api.friends_ids()
 	followers_names=[]
 	followings_names=[]
 
 	# People following me
 	print ("\nFOLLOWERS\n")
 	counter = 0
-	for i in followers:
+	for i in followers.items():
 		try:
 			time.sleep(delay_)
 			screen_name = api.get_user(i).screen_name
