@@ -76,7 +76,7 @@ def ratelimit():
 
 def report(api):
 	followers = api.get_users_followers(1279141452606562306)
-	followings = api.get_users_following()
+	followings = api.get_users_following(1279141452606562306)
 	followers_names=[]
 	followings_names=[]
 
