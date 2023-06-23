@@ -10,7 +10,7 @@ access_token_secret=os.environ["access_token_secret"]
 Uncomment the below code and run script to confirm keys are set
 dont forget to comment the below code back when check is done
 '''
-# print(f"consumer_key : {consumer_key} \nconsumer_secret : {consumer_secret} \naccess_token : {access_token} \naccess_token_secret : {access_token_secret}")
+# print(f"bearer_token : {bearer_token}\n\nconsumer_key : {consumer_key} \n\nconsumer_secret : {consumer_secret} \n\naccess_token : {access_token} \n\naccess_token_secret : {access_token_secret}")
 
 
 
