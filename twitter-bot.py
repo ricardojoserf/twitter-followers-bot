@@ -75,8 +75,8 @@ def ratelimit():
 
 
 def report(api):
-	followers = api.get_follower_ids()
-	followings = api.get_friends_ids()
+	followers = api.get_users_followers(1279141452606562306)
+	followings = api.get_users_following()
 	followers_names=[]
 	followings_names=[]
 
@@ -139,18 +139,19 @@ def report(api):
 def main():
     # Check config file is ok
     if config.consumer_key != "" or config.consumer_secret != "" or config.access_token != "" or config.access_token_secret != "":
-        consumer_key=config.consumer_key
-        consumer_secret=config.consumer_secret
-        access_token=config.access_token
-        access_token_secret=config.access_token_secret
+	bearer_token=config.bearer_token
+	consumer_key=config.consumer_key
+	consumer_secret=config.consumer_secret
+	access_token=config.access_token
+	access_token_secret=config.access_token_secret
     else:
-        print ("Fill the config file please!")
-        return
+	print ("Fill the config file please!")
+	return
     # Auth process
     try:
-        auth = OAuthHandler(consumer_key, consumer_secret)
-        auth.set_access_token(access_token, access_token_secret)
-        api = tweepy.API(auth)
+        #auth = OAuthHandler(consumer_key, consumer_secret)
+        #auth.set_access_token(access_token, access_token_secret)
+        api = tweepy.Client(bearer_token=bearer_tokenconsumer_key=consumer_key, consumer_secret=consumer_secret,access_token=access_token,access_token_secret=access_token_secret)
     except ValueError:
         print("Error authenticating!")
     # Different options
