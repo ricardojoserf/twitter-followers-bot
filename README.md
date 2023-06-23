@@ -90,7 +90,7 @@ pip3 install tweepy
 ```
 
 *Create a twitter account and a twitter app, and fill the **config.py** file with the data you can create in https://developer.twitter.com*
-
+*Check the config.py file for steps on setting up
 ## Note
 
 Tested both in Python2.x (2.7.15rc1) and Python 3.x (3.6.7)
