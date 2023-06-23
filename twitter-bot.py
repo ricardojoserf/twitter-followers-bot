@@ -76,7 +76,7 @@ def ratelimit():
 
 def report(api):
 	followers = tweepy.Cursor(api.followers_ids,user_id='twitter_user_id')
-    followings = api.friends_ids()
+	followings = api.friends_ids()
 	followers_names=[]
 	followings_names=[]
 
