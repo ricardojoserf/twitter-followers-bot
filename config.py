@@ -1,21 +1,29 @@
 import os
 
-bearer_token=os.environ["BEARERTOKEN"]
-consumer_key=os.environ["APIKEY"]
-consumer_secret=os.environ["APIKEYSECRET"]
-access_token=os.environ["ACCESSTOKEN"]
-access_token_secret=os.environ["ACCESSTOKENSECRET"]
+bearer_token=os.environ["bearer_token"]
+consumer_key=os.environ["consumer_key"]
+consumer_secret=os.environ["consumer_secret"]
+access_token=os.environ["access_token"]
+access_token_secret=os.environ["access_token_secret"]
 
-print(f"consumer--key : {consumer_key} \nconsumer_secret : {consumer_secret} \naccess_token : {access_token} \naccess_token_secret : {access_token_secret}")
+'''
+Uncomment the below code and run script to confirm keys are set
+dont forget to comment the below code back when check is done
+'''
+# print(f"consumer_key : {consumer_key} \nconsumer_secret : {consumer_secret} \naccess_token : {access_token} \naccess_token_secret : {access_token_secret}")
+
+
+
+
+
 
 '''
 Set your configuration key by running the below code in your shell/terminal : 
-export APIKEY="your api key"
-export BEARERTOKEN="your bearer token"
-export APIKEYSECRET="your api key secret"
-export ACCESSTOKEN="your access token"
-export ACCESSTOKENSECRET="your access token secret"
+export bearer_token="your bearer token"
+export consumer_key="your api key"
+export consumer_secret="your api key secret"
+export access_token="your access token"
+export access_token_secret="your access token secret"
 '''
 
-# Run this script to comfirm keys are set
 
